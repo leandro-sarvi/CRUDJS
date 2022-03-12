@@ -1,0 +1,114 @@
+<!DOCTYPE html:5>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span>CRUDJS</span>
+  </nav>
+  
+    <div class="viewAgregar hidden" id="ma">
+      <div class="agregar">
+        <h3>MODIFICAR/AGREGAR PRODUCTO</h3>
+        <form id="frm" name="frmProducto">
+           <div class="inputs">
+            <input type="hidden" name="id">
+            <div class="input-box">
+               <div> <input type="text" autocomplete="off" name="nombre" id="nombre" placeholder="Ingrese nombre"></div>
+               <i class="fas "></i>
+            </div>
+              <div class="input-box">
+                <div><input type="text" autocomplete="off" name="precio" id="precio" placeholder="Ingrese precio"></div>
+                 <i class="fas "></i>
+              </div>
+           </div>
+        </form>
+        <div class="btns">
+          <a id="save"><i class="fas fa-save"></i></a>
+        <a  id="back"><i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="modalBorrar hidden" id="mBorrar">
+      <div class="borrar">
+        <h3>Deseas borrar el producto?</h3>
+        <input type="hidden" id="producId">
+        <div class="btns">
+         <a class="ok" id="ok"><i class="fas fa-check"></i></a>
+         <a class="salir" id="salir"><i class="fas fa-times"></i></a>
+        </div>
+        </div>
+    </div>
+    <div class="contenedor">
+      <div class="conte2">
+         <div class="newPro">
+        <h4>All Products</h4>
+        <a class="btnNew" id="mod"><i class="fas fa-plus-circle"></i> Add New Products</a>
+      </div>
+      <div class="div1">
+        <table id="tblProductos" class="tbe">
+          <thead>
+            <tr class="tt">
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th colspan="2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="registros">
+            <tr>
+              <td>0</td>
+              <td>test</td>
+              <td>test</td>
+              <td><i data-id="0" class="fa fa-pencil"></i></td>
+              <td><i data-id="0" class="fa fa-trash"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+     
+    </div>
+    <script src="https://kit.fontawesome.com/edd36e583e.js" crossorigin="anonymous"></script>
+  <script src="fetchUtil.js"></script>
+  <script src="fetchConfigurado.js"></script>
+</body>
+</html>
+<!--
+  CRUD! (Create, Read, Update, Delete)
+
+  Revisá primero la teoría de "Fetch Configurado".
+
+  Crea el frontend para una pantalla de altas, modificacion y borrado (ABM) de Productos.
+  Debes utilizas json-server para levantar un servidor API que te sirva de backend.
+  Encontrarás una carpeta llamada server con un archivo json. Parate dentro de esa carpeta con la consola y ejecuta el comando para lanzar el Fake API REST.
+
+
+  En pantalla debe haber una tabla con todos los productos existentes.
+  - debo buscar todos los productos y por cada uno agregar a la tabla un tr como el que hay en el html de ejemplo, pero con los datos del producto.
+  - al pulsar el boton nuevo, debe aparecer un formulario que me permita crear un nuevo producto.
+  - al pulsar el boton de lapiz, mostrar el mismo formulario pero esta vez lleno. 
+  - el boton guardar puede tomar la decision de insertar o actualizar, dependiendo si el campo id (hidden) es cero (nuevo) o es un número diferente a cero (actualizar).
+  - al pulsar el tacho de basura, una confirmacion borra el producto. 
+  - luego de guardar, actualizar o borrar debo recrea la tabla completa.
+  - crear una funcion para cada operacion para productos (obtener-todos, obtener-por-id, crear, modificar, borrar). Estas operaciones son ajax, utiliza fetch y si quieres puede hacerlo con async await.
+
+  Tips:
+  Observa que dispones de una clase de css llamada oculto, esa clase está aplicada al formulario.
+  Puedes hacer aparecer y desaparecer el formulario con classList.add/remove.
+  Puedes crear una función para mostrar el formulario y otra función para ocultarlo, ya que seguramente las necesitaras.
+
+  Atributos data- de html
+  Los nodos htmlElements tienen una propiedad llamada dataset que por defecto es un objeto vacío
+  si la etiqueta a la que representa tiene atributos data-, se agregan propiedades al dataset.
+  Mira el Ejemplo:
+    <div></div>                               ==> nodoDiv.dataset es un objeto sin propiedades
+    <div data-algo="10"></div>                ==> nodoDiv.dataset.algo es "10"
+    <div data-algo="10" data-otro="20"></div> ==> nodoDiv.dataset.algo es "10" y nodoDiv.dataset.otro es "20"
+
+-->

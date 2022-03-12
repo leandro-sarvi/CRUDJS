@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "name": "Notebook",
+      "price": "46999",
+      "id": 2
+    },
+    {
+      "name": "Cocina",
+      "price": "7000",
+      "id": 3
+    },
+    {
+      "name": "Heladera",
+      "price": "15000",
+      "id": 4
+    },
+    {
+      "name": "Led",
+      "price": "50000",
+      "id": 5
+    },
+    {
+      "name": "Secador",
+      "price": "7000",
+      "id": 6
+    },
+    {
+      "name": "Cafetera",
+      "price": "9000",
+      "id": 7
+    },
+    {
+      "name": "Plancha",
+      "price": "3000",
+      "id": 8
+    },
+    {
+      "name": "Celular",
+      "price": "90000",
+      "id": 9
+    },
+    {
+      "name": "Monitor",
+      "price": "50000",
+      "id": 10
+    },
+    {
+      "name": "Dispenser",
+      "price": "60000",
+      "id": 11
+    },
+    {
+      "name": "Tostadora",
+      "price": "2000",
+      "id": 12
+    },
+    {
+      "name": "Maquina de cocer",
+      "price": "70000",
+      "id": 13
+    },
+    {
+      "name": "Batidora",
+      "price": "7000",
+      "id": 14
+    }
+  ]
+}
