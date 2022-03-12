@@ -1,48 +1,9 @@
-/*
-Ya sabemos que fetch nos permite realizar peticiones GET.
-¿Pero que pasa si necesitamos usar otros métodos HTTP?
-Bueno, existe un segundo parámetro que nos permite configurar
-el método, encabezados y el body de la request.
-
-Ejemplo de POST:
-*/
-
 function handlerJsonRequest(respuesta){
   if(!respuesta.ok){
     throw new Error("Error ajax");
   }
   return respuesta.json();
 }
-
-function agregarUsuario(usuario){
-  fetch("http://localhost:3000/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(usuario)
-  })
-    .then(handlerJsonRequest)
-    .then(json => console.log(json))
-    .catch(err=>console.error(err));
-}
-
-/* El header Content-Type le informa al servidor, que les estamos
-enviando un JSON.
-Luego en el body le pasamos una cadena JSON.
-Los siguientes then manejan la respuesta de esa petición.
-
-Para probarlo, agregar este script en un html. 
-Abrirlo en el navegador, y en la consola de DevTools, invocá lo siguiente:
-
-agregarUsuario({ name: "Alice", edad: 19 });
-
-NOTA: no usar el mismo liveserver para el frontend y el json-server,
-ya que cada vez que modifiques el db.json, el liveserver recargará el navegador
-y no verás el resultado.
-Lo ideal es tener un vscode para el frontend y un vscode para el json-server.
-
-*/
 const states = {
   nombre: false,
   precio: false,
