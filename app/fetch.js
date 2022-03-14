@@ -1,13 +1,3 @@
-function handlerJsonRequest(respuesta){
-  if(!respuesta.ok){
-    throw new Error("Error ajax");
-  }
-  return respuesta.json();
-}
-const states = {
-  nombre: false,
-  precio: false,
-};
 const URL = "http://localhost:3000";
 const modal = document.getElementById("mBorrar");
 const idProd = document.getElementById("producId");
@@ -37,6 +27,16 @@ back.addEventListener("click",salir);
 btnOk.addEventListener("click",borrProductos);
 btnSalir.addEventListener("click",salirModal);
 window.addEventListener("load",obtenerProductos);
+function handlerJsonRequest(respuesta){
+  if(!respuesta.ok){
+    throw new Error("Error ajax");
+  }
+  return respuesta.json();
+}
+const states = {
+  nombre: false,
+  precio: false,
+};
 function obtenerProductos(){
 fetch(URL+"/products")
 .then(handleJsonResponse)
