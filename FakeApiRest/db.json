@@ -64,6 +64,11 @@
       "name": "Batidora",
       "price": "7000",
       "id": 14
+    },
+    {
+      "name": "Celular",
+      "price": "70000",
+      "id": 15
     }
   ]
 }
