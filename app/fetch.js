@@ -59,23 +59,6 @@ return  `
         </tr>
 `;
 }
-function crearProducto(prod){
-  fetch(URL+"/products", 
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(prod)
-  })
-    .then(handlerJsonRequest)
-    .then(() => {
-      obtenerProductos();
-      removeIcon();
-      borrar();
-    })
-    .catch(err=>console.error(err));
-}
 function enviarFormulario(e){
   const { id, nombre, precio } = form.elements;
   e.preventDefault();
@@ -95,6 +78,23 @@ function enviarFormulario(e){
     nin.dispatchEvent(new Event('blur'));
     pin.dispatchEvent(new Event('blur'));
   }
+}
+function crearProducto(prod){
+  fetch(URL+"/products", 
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(prod)
+  })
+    .then(handlerJsonRequest)
+    .then(() => {
+      obtenerProductos();
+      removeIcon();
+      borrar();
+    })
+    .catch(err=>console.error(err));
 }
 function buscarId(id){
   fetch(URL+`/products/${id}`)
