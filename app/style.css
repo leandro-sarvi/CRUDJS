@@ -107,6 +107,9 @@ margin-left: 20px;
   text-align: center;
   padding: 20px;
 }
+.borrar h3{
+  color: #545454;
+}
 .agregar{
     background-color: white;
     border-radius: 10px;
