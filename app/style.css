@@ -44,7 +44,8 @@ body{
     font-weight: 100;
   }
 tbody{
-  color: black;
+  color: #595959;
+  font-weight: bold;
 }
   tbody tr:nth-child(odd) {
 background-color: white;
@@ -117,7 +118,7 @@ margin-left: 20px;
 }
 .agregar h3{
   margin: 10px 0;
-  color: #9f9f9f;
+  color: #595959;
   font-weight: bold;
 }
 .inputs{
